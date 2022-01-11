@@ -28,11 +28,15 @@ public class Main{
 					String nome;
 					if( op == 1){ // ADICIONAR MUSICA
 						InterfaceAdicionarMidia addMidia = new AdicionarMusica();
-						midias.add(addMidia.adicionar("Kick It"));
+						System.out.print("\nDigite o nome da musica: ");
+						nome = inputString();
+						midias.add(addMidia.adicionar(nome));
 					}
 					if( op == 2){ // ADICIONAR VIDEO
 						InterfaceAdicionarMidia addMidia = new AdicionarVideo();
-						midias.add(addMidia.adicionar("How You Like That M/V"));
+						System.out.print("\nDigite o nome do video: ");
+						nome = inputString();
+						midias.add(addMidia.adicionar(nome));
 					}
 				break;
 			}
