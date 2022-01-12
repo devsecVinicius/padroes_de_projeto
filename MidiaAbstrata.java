@@ -1,15 +1,16 @@
 public abstract class MidiaAbstrata{
 	protected String nome;
+	protected String extensao;
 	
-	public Midia( String nome ){
+	public abstract String getNome();
+  
+	public abstract String getExtensao();
+	
+	public void setNome(String nome){
 		this.nome = nome;
 	}
-	
-	public String getNome();
   
-	public String getExtensao();
-	
-	public void setNome(String nome);
-  
-	public void setExtensao(String extensao);
+	public void setExtensao(String extensao){
+		this.extensao = extensao;
+	}
 }
