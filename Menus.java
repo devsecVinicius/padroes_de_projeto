@@ -29,6 +29,7 @@ public class Menus{
 		System.out.println("\t--------------------------");
 		System.out.println("\n 1) Adicionar Musica");
 		System.out.println("\n 2) Adicionar Video");
+		System.out.println("\n 3) Outro");
 		System.out.print("\n\n>>> ");
 	}
 	
