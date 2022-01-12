@@ -20,7 +20,7 @@ public class Main{
 					menus.printMenuOp1();
 					nome = inputString();
 					MidiaAbstrata  sda = manipularMidia.selecionarMidia(midias, nome);
-					System.out.println(sda.getNome()+"."+sda.getExtensao());
+					System.out.println("\n\t"+sda.getNome()+"."+sda.getExtensao());
 				break;
 				case 2: // VER MIDIAS
 					menus.printMenuOp2();
@@ -30,17 +30,32 @@ public class Main{
 					int op = 0;
 					menus.printMenuOp3();
 					op = inputInt();
-					if( op == 1){ // ADICIONAR MUSICA
-						System.out.print("\nDigite o nome da musica: ");
-						nome = inputString();
-						manipularMidia = new ManipularMidia(new AdicionarMusica(), nome);
-						midias.add(manipularMidia.addMidia.adicionar(nome));
-					}
-					if( op == 2){ // ADICIONAR VIDEO
-						System.out.print("\nDigite o nome do video: ");
-						nome = inputString();
-						manipularMidia = new ManipularMidia(new AdicionarVideo(), nome);
-						midias.add(manipularMidia.addMidia.adicionar(nome));
+					if(op != 1 && op != 2 && op != 3 && op != 4 )
+						System.out.println("\nOpcao Invalida!!!");
+					else{
+						if( op == 1){ // ADICIONAR MUSICA
+							System.out.print("\nDigite o nome da musica: ");
+							nome = inputString();
+							manipularMidia = new ManipularMidia(new AdicionarMusica(), nome);
+							midias.add(manipularMidia.addMidia.adicionar(nome));
+						}
+						if( op == 2){ // ADICIONAR VIDEO
+							System.out.print("\nDigite o nome do video: ");
+							nome = inputString();
+							manipularMidia = new ManipularMidia(new AdicionarVideo(), nome);
+							midias.add(manipularMidia.addMidia.adicionar(nome));
+						}
+						if( op == 3){ // ADICIONAR OUTRO TIPO DE MIDIA
+							System.out.print("\nDigite o nome da midia: ");
+							nome = inputString();
+							System.out.print("\nDigite a extensao do arquivo: ");
+							String ext = inputString();
+							manipularMidia = new ManipularMidia(new AdicionarMidia(ext), nome);
+							midias.add(manipularMidia.addMidia.adicionar(nome));
+						}
+						if( op == 4){ // VOLTAR
+							continue;
+						}
 					}
 				break;
 			}
