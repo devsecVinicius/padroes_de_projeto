@@ -6,15 +6,22 @@ public class Main{
 	
 	public static void main (String[] args) {
 		int opcao = 0;
-		List<Midia> midias = new ArrayList<Midia>();
+		List<MidiaAbstrata> midias = new ArrayList<MidiaAbstrata>();
 		ManipularMidia manipularMidia = new ManipularMidia();
 		Menus menus = new Menus();
+		String nome = "Vazio";
 		
 		while( opcao != 666 ){
 			menus.printMenu();
 			opcao = inputInt();
 			
 			switch(opcao) {
+				case 1:
+					menus.printMenuOp1();
+					nome = inputString();
+					MidiaAbstrata  sda = manipularMidia.selecionarMidia(midias, nome);
+					System.out.println(sda.getNome()+"."+sda.getExtensao());
+				break;
 				case 2: // VER MIDIAS
 					menus.printMenuOp2();
 					manipularMidia.imprimirMidias(midias);
@@ -23,7 +30,6 @@ public class Main{
 					int op = 0;
 					menus.printMenuOp3();
 					op = inputInt();
-					String nome;
 					if( op == 1){ // ADICIONAR MUSICA
 						System.out.print("\nDigite o nome da musica: ");
 						nome = inputString();
