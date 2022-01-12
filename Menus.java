@@ -10,6 +10,13 @@ public class Menus{
 		System.out.print("\n\n>>> ");
 	}
 	
+	public static void printMenuOp1(){
+		System.out.println("\n\n\t--------------------------");
+		System.out.println("\t     Selecionar Midia");
+		System.out.println("\t--------------------------\n\n");
+		System.out.print("\n\n>>> ");
+	}
+	
 	public static void printMenuOp2(){
 		System.out.println("\n\n\t--------------------------");
 		System.out.println("\t\t  Midias");
