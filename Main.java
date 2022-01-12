@@ -7,67 +7,40 @@ public class Main{
 	public static void main (String[] args) {
 		int opcao = 0;
 		List<Midia> midias = new ArrayList<Midia>();
+		ManipularMidia manipularMidia = new ManipularMidia();
+		Menus menus = new Menus();
 		
 		while( opcao != 666 ){
-			printMenu();
+			menus.printMenu();
 			opcao = inputInt();
 			
 			switch(opcao) {
 				case 2: // VER MIDIAS
-				System.out.println(midias.size());
-					int i = 0;
-					printMenuOp2();
-					for(i = 0; i < midias.size() ; ++i) {
-						System.out.println("Nome = " + midias.get(i).nome+"."+midias.get(i).extensao);
-					}
+					menus.printMenuOp2();
+					manipularMidia.imprimirMidias(midias);
 				break;
 				case 3: // ADICIONAR MIDIA
 					int op = 0;
-					printMenuOp3();
+					menus.printMenuOp3();
 					op = inputInt();
 					String nome;
 					if( op == 1){ // ADICIONAR MUSICA
-						InterfaceAdicionarMidia addMidia = new AdicionarMusica();
 						System.out.print("\nDigite o nome da musica: ");
 						nome = inputString();
-						midias.add(addMidia.adicionar(nome));
+						manipularMidia = new ManipularMidia(new AdicionarMusica(), nome);
+						midias.add(manipularMidia.addMidia.adicionar(nome));
 					}
 					if( op == 2){ // ADICIONAR VIDEO
-						InterfaceAdicionarMidia addMidia = new AdicionarVideo();
 						System.out.print("\nDigite o nome do video: ");
 						nome = inputString();
-						midias.add(addMidia.adicionar(nome));
+						manipularMidia = new ManipularMidia(new AdicionarVideo(), nome);
+						midias.add(manipularMidia.addMidia.adicionar(nome));
 					}
 				break;
 			}
 		}
 		
-	}
-	
-	public static void printMenu(){
-		System.out.println("\n\n\t--------------------------");
-		System.out.println("\t  Player de Video/Musica");
-		System.out.println("\t--------------------------");
-		System.out.println("\n 1) Selecionar Midia");
-		System.out.println("\n 2) Ver Midia(s)");
-		System.out.println("\n 3) Adicionar Midia");
-		System.out.println("\n 666) Sair");
-		System.out.print("\n\n>>> ");
-	}
-	
-	public static void printMenuOp3(){
-		System.out.println("\n\n\t--------------------------");
-		System.out.println("\t  Adicionar Video/Musica");
-		System.out.println("\t--------------------------");
-		System.out.println("\n 1) Adicionar Musica");
-		System.out.println("\n 2) Adicionar Video");
-		System.out.print("\n\n>>> ");
-	}
-	public static void printMenuOp2(){
-		System.out.println("\n\n\t--------------------------");
-		System.out.println("\t\t  Midias");
-		System.out.println("\t--------------------------\n\n");
-	}
+	}// final da main
 	
 	public static int inputInt(){
 		Scanner scanner = new Scanner(System.in);
