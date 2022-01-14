@@ -14,4 +14,9 @@ public class NullMidia extends MidiaAbstrata{
 		return this.extensao;
 	}
 	
+	@Override
+	public int tamanho(){
+		return 0;
+	}
+	
 }
