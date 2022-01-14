@@ -17,7 +17,7 @@ public class ManipularMidia{
 	public void imprimirMidias(List<MidiaAbstrata> midias){
 		int i = 0;
 		for(i = 0; i < midias.size() ; ++i){
-			System.out.println("Nome = " + midias.get(i).getNome()+"."+midias.get(i).getExtensao());
+			System.out.println("Nome = " + midias.get(i).getNome() + "." + midias.get(i).getExtensao() + "\tTamanho = " + midias.get(i).tamanhoDoArquivo() + " mb");
 		}
 	}
 	
@@ -31,4 +31,3 @@ public class ManipularMidia{
 		return new NullMidia();
 	}
 }
-
