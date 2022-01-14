@@ -14,4 +14,15 @@ public class Midia extends MidiaAbstrata{
 		return this.extensao;
 	}
 	
+	@Override
+	public int tamanho(){
+		if(extensao.equals("mp3")){
+			return 3;
+		}
+		if(extensao.equals("mp4")){
+			return 5;
+		}
+		return 4;
+	}
+	
 }
