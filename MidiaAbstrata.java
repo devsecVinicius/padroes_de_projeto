@@ -13,4 +13,10 @@ public abstract class MidiaAbstrata{
 	public void setExtensao(String extensao){
 		this.extensao = extensao;
 	}
+	
+	public int tamanhoDoArquivo(){
+		return nome.length() * tamanho();
+	}
+	
+	public abstract int tamanho();
 }
