@@ -19,8 +19,14 @@ public class Main{
 				case 1:
 					menus.printMenuOp1();
 					nome = inputString();
-					MidiaAbstrata  sda = manipularMidia.selecionarMidia(midias, nome);
-					System.out.println("\n\t"+sda.getNome()+"."+sda.getExtensao());
+					MidiaAbstrata  midiaAbstrata= manipularMidia.selecionarMidia(midias, nome);
+					System.out.println("\n\t"+midiaAbstrata.getNome()+"."+midiaAbstrata.getExtensao());
+					if( !(midiaAbstrata instanceof NullMidia) ){
+						System.out.println("\n\n\tDeseja reproduzir " + midiaAbstrata.getNome() + "." + midiaAbstrata.getExtensao() + " ?");
+						System.out.println("\n\t1) Sim");
+						System.out.println("\n\t2) Nao");
+						System.out.print("\n\n>>> ");
+					}
 				break;
 				case 2: // VER MIDIAS
 					menus.printMenuOp2();
