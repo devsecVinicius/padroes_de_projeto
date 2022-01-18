@@ -10,6 +10,8 @@ public class Main{
 		ManipularMidia manipularMidia = new ManipularMidia();
 		Menus menus = new Menus();
 		String nome = "Vazio";
+		int op = 0;
+		Speed speed = null;
 		
 		while( opcao != 666 ){
 			menus.printMenu();
@@ -26,6 +28,10 @@ public class Main{
 						System.out.println("\n\t1) Sim");
 						System.out.println("\n\t2) Nao");
 						System.out.print("\n\n>>> ");
+						op = inputInt();
+						if( op == 1 ){
+							System.out.println("\n\n\tReproduzindo: " + midiaAbstrata.getNome() );
+						}
 					}
 				break;
 				case 2: // VER MIDIAS
@@ -33,7 +39,7 @@ public class Main{
 					manipularMidia.imprimirMidias(midias);
 				break;
 				case 3: // ADICIONAR MIDIA
-					int op = 0;
+					op = 0;
 					menus.printMenuOp3();
 					op = inputInt();
 					if(op != 1 && op != 2 && op != 3 && op != 4 )
@@ -61,6 +67,22 @@ public class Main{
 						}
 						if( op == 4){ // VOLTAR
 							continue;
+						}
+					}
+				break;
+				case 4:
+					while(true){
+						menus.printMenuOp4();
+						op = inputInt();
+						if( op == 1 ){
+							if( speed != null ){
+								speed.changeSpeed();
+							}else{
+								speed = new Speed();
+							}
+						}
+						if( op == 2 ){
+							break;
 						}
 					}
 				break;
