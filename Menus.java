@@ -6,6 +6,7 @@ public class Menus{
 		System.out.println("\n 1) Selecionar Midia");
 		System.out.println("\n 2) Ver Midia(s)");
 		System.out.println("\n 3) Adicionar Midia");
+		System.out.println("\n 4) Configuracoes");
 		System.out.println("\n 666) Sair");
 		System.out.print("\n\n>>> ");
 	}
@@ -33,5 +34,12 @@ public class Menus{
 		System.out.println("\n 4) Voltar");
 		System.out.print("\n\n>>> ");
 	}
-	
+	public static void printMenuOp4(){
+		System.out.println("\n\n\t--------------------------");
+		System.out.println("\t      Configuracoes");
+		System.out.println("\t--------------------------");
+		System.out.print("\n 1) Velocidade de reproducao");
+		System.out.print("\n 2) Voltar");
+		System.out.print("\n\n>>> ");
+	}
 }
