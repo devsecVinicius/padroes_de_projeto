@@ -12,7 +12,10 @@ public class Main{
 		String nome = "Vazio";
 		int op = 0;
 		Speed speed = null;
-		
+		Player player = new Player();
+		List<Dispositivo> listaDeDispositivos = new ArrayList<Dispositivo>();
+		Dispositivo dispositivo;
+				
 		while( opcao != 666 ){
 			menus.printMenu();
 			opcao = inputInt();
@@ -30,7 +33,7 @@ public class Main{
 						System.out.print("\n\n>>> ");
 						op = inputInt();
 						if( op == 1 ){
-							System.out.println("\n\n\tReproduzindo: " + midiaAbstrata.getNome() );
+							player.notificar(midiaAbstrata.getNome());
 						}
 					}
 				break;
@@ -84,6 +87,38 @@ public class Main{
 						if( op == 2 ){
 							break;
 						}
+					}
+				break;
+				case 5:
+					menus.printMenuOp5();
+					op = inputInt();
+					if( op == 1 ){
+						System.out.print("\nDigite o nome do dispositivo: ");
+						nome = inputString();
+						dispositivo = new Dispositivo(nome);
+						listaDeDispositivos.add(dispositivo);
+						
+						player.limparObservadores();
+						for( Dispositivo d : listaDeDispositivos){
+							player.adicionarObservador(d);
+						}
+					}
+					if( op == 2 ){
+						System.out.print("\nDigite o nome do dispositivo que deseja remover: ");
+						nome = inputString();
+						for( Dispositivo d : listaDeDispositivos ){
+							if(d.getNome().equals(nome)){
+								player.removerObservador(d);
+								listaDeDispositivos.remove(d);
+							}
+						}
+					}
+					if( op == 3 ){
+						System.out.println("\n\n\t\tLista de todos os dispositivos: \n");
+						for( Dispositivo d : listaDeDispositivos ){
+							System.out.println("\t\tNome = " + d.getNome());
+						}
+						System.out.println("\n\n");
 					}
 				break;
 			}
