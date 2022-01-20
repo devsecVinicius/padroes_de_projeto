@@ -19,8 +19,8 @@ public class Player implements Observavel{
 	}
 
 	public void limparObservadores(){
-		for (Observador o : observadores)
-			observadores.remove(o);
+		observadores = null;
+		observadores = new ArrayList<Observador>();
 	}
 
 	public String getNome(){
