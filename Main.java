@@ -15,13 +15,15 @@ public class Main{
 		Player player = new Player();
 		List<Dispositivo> listaDeDispositivos = new ArrayList<Dispositivo>();
 		Dispositivo dispositivo;
-				
+		Qualidade qualidade1, qualidade2;
+		qualidade1 = qualidade2 = null;
+
 		while( opcao != 666 ){
 			menus.printMenu();
 			opcao = inputInt();
 			
 			switch(opcao) {
-				case 1:
+				case 1: // SELECIONAR MIDIA
 					menus.printMenuOp1();
 					nome = inputString();
 					MidiaAbstrata  midiaAbstrata= manipularMidia.selecionarMidia(midias, nome);
@@ -73,23 +75,50 @@ public class Main{
 						}
 					}
 				break;
-				case 4:
+				case 4: // CONFIGURAÇÕES
 					while(true){
 						menus.printMenuOp4();
 						op = inputInt();
-						if( op == 1 ){
+						if( op == 1 ){// VELOCIDADE DE REPRODUÇÃO
 							if( speed != null ){
 								speed.changeSpeed();
 							}else{
 								speed = new Speed();
 							}
 						}
-						if( op == 2 ){
+						if( op == 2 ){ // QUALIDADE DE REPRODUCAO
+							System.out.print("\n 1) Ver qualidade de audio\n 2) Ver qualidade de video\n 3) Alterar qualidade de audio\n 4) Alterar qualidade de video\n\n>>> ");
+							op = inputInt();
+							String qualidadeAudio, qualidadeVideo;
+							
+							if( op == 1 && qualidade1 != null){
+								System.out.println("\nQualidade atual: " + qualidade1.getQualidade());
+							}
+
+							if( op == 2 && qualidade2 != null){
+								System.out.println("\nQualidade atual: " + qualidade2.getQualidade());
+							}
+							
+							if(op == 3){
+								System.out.print("\nDigite a qualidade desejada (baixa, media, alta)\n>>> ");								
+								qualidadeAudio = inputString();
+								qualidade1 = new QualidadeSimples(qualidadeAudio);
+							}
+							
+							if( op == 4){
+								System.out.print("\nDigite a qualidade de audio desejada (baixa, media, alta)\n>>> ");
+								qualidadeAudio = inputString();
+								System.out.print("\nDigite a qualidade de video desejada (baixa, media, alta)\n>>> ");
+								qualidadeVideo = inputString();
+								qualidade2 = new QualidadeComposta(new QualidadeSimples(qualidadeAudio), new QualidadeSimples(qualidadeVideo));
+							}
+						}
+						if( op == 3 ){ // VOLTAR
 							break;
 						}
 					}
 				break;
-				case 5:
+				case 5: // DISPOSITIVOS
 					menus.printMenuOp5();
 					op = inputInt();
 					if( op == 1 ){
