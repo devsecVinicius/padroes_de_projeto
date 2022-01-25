@@ -35,14 +35,17 @@ public class Menus{
 		System.out.println("\n 4) Voltar");
 		System.out.print("\n\n>>> ");
 	}
+	
 	public static void printMenuOp4(){
 		System.out.println("\n\n\t--------------------------");
 		System.out.println("\t      Configuracoes");
 		System.out.println("\t--------------------------");
 		System.out.print("\n 1) Velocidade de reproducao");
-		System.out.print("\n 2) Voltar");
+		System.out.print("\n 2) Qualidade de reproducao");
+		System.out.print("\n 3) Voltar");
 		System.out.print("\n\n>>> ");
 	}
+	
 	public static void printMenuOp5(){
 		System.out.println("\n\n\t--------------------------");
 		System.out.println("\t      Dispositivos");
