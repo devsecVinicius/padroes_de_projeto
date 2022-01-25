@@ -132,15 +132,23 @@ public class Main{
 							player.adicionarObservador(d);
 						}
 					}
+					int teste = 7;
 					if( op == 2 ){
 						System.out.print("\nDigite o nome do dispositivo que deseja remover: ");
 						nome = inputString();
 						for( Dispositivo d : listaDeDispositivos ){
 							if(d.getNome().equals(nome)){
 								player.removerObservador(d);
-								listaDeDispositivos.remove(d);
+								for( int k = 0 ; k < listaDeDispositivos.size() ; ++k ){
+									if(nome.equals(listaDeDispositivos.get(k).getNome())){
+										teste = k;
+									}
+								}
 							}
 						}
+						if(teste != 7)
+							listaDeDispositivos.remove(teste);
+						teste = 7 ;
 					}
 					if( op == 3 ){
 						System.out.println("\n\n\t\tLista de todos os dispositivos: \n");
