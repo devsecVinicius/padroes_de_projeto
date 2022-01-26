@@ -25,9 +25,10 @@ public class Main{
 			switch(opcao) {
 				case 1: // SELECIONAR MIDIA
 					menus.printMenuOp1();
+					System.out.print("\nDigite o nome da midia: ");
 					nome = inputString();
 					MidiaAbstrata  midiaAbstrata= manipularMidia.selecionarMidia(midias, nome);
-					System.out.println("\n\t"+midiaAbstrata.getNome()+"."+midiaAbstrata.getExtensao());
+					System.out.println("\n\tResultado da pesquisa: "+midiaAbstrata.getNome()+"."+midiaAbstrata.getExtensao());
 					if( !(midiaAbstrata instanceof NullMidia) ){
 						System.out.println("\n\n\tDeseja reproduzir " + midiaAbstrata.getNome() + "." + midiaAbstrata.getExtensao() + " ?");
 						System.out.println("\n\t1) Sim");
