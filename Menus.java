@@ -16,7 +16,6 @@ public class Menus{
 		System.out.println("\n\n\t--------------------------");
 		System.out.println("\t     Selecionar Midia");
 		System.out.println("\t--------------------------\n\n");
-		System.out.print("\n\n>>> ");
 	}
 	
 	public static void printMenuOp2(){
