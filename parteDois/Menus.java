@@ -55,4 +55,16 @@ public class Menus{
 		System.out.println("\n 3) Ver Dispositivos");
 		System.out.print("\n\n>>> ");
 	}
+
+	public static void printMenuOp6(){
+		System.out.println("\n\n\t--------------------------");
+		System.out.println("\t      Usuario");
+		System.out.println("\t--------------------------");
+		System.out.println("\n 1) Cadastrar Usuario com Nome");
+		System.out.println("\n 2) Cadastrar Usuario com Nome e Endereco");
+		System.out.println("\n 3) Cadastrar Usuario com Nome, Endereco e Idade");
+		System.out.println("\n 4) Cadastrar Usuario com Nome e Idade");
+		System.out.println("\n 5) Ver Informacoes do Usuario");
+		System.out.print("\n\n>>> ");
+	}
 }
